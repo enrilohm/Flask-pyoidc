@@ -55,7 +55,9 @@ class PyoidcFacade:
         print("wtf", flush=True)
         print(provider_configuration._issuer, flush=True)
         print(self._client.issuer, flush=True)
-        self._client.issuer= provider_configuration._issuer
+        provider_configuration._issuer = self._client.issuer
+        print(provider_configuration._issuer, flush=True)
+        print(self._client.issuer, flush=True)
         self._redirect_uri = redirect_uri
 
     def _store_registration_info(self, client_metadata):
