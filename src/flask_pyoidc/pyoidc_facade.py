@@ -52,9 +52,9 @@ class PyoidcFacade:
             client_metadata.update(redirect_uris=[redirect_uri])
             self._store_registration_info(client_metadata)
 
-        print("wtf")
-        print(provider_configuration._issuer)
-        print(self._client.issuer)
+        print("wtf", flush=True)
+        print(provider_configuration._issuer, flush=True)
+        print(self._client.issuer, flush=True)
         self._client.issuer= provider_configuration._issuer
         self._redirect_uri = redirect_uri
 
