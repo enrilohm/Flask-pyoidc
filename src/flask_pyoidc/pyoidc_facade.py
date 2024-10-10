@@ -28,6 +28,9 @@ class PyoidcFacade:
         self._provider_configuration = provider_configuration
         self._client = Client(client_authn_method=CLIENT_AUTHN_METHOD,
                               settings=provider_configuration.client_settings)
+
+        self._client.allow["issuer_mismatch"]=True
+
         # Token Introspection is implemented under extension sub-package of
         # the client in pyoidc.
         self._client_extension = ClientExtension(client_authn_method=CLIENT_AUTHN_METHOD,
